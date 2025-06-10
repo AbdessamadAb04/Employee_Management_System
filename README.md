@@ -1,2 +1,3 @@
 # Employee_Management_System
-This is my first basic Java project about manipulating data of the Big 3 - employees, departments and projects - Centralizing the employees as the primary foculased element of this project. 
+Ce projet s'agit de mon premier projet Java de base, centré sur la gestion des données des « Big 3 » : les employés, les départements et les projets — avec les employés comme étant la base principal.
+Le projet utilise les principes de la programmation orientée objet, avec des classes et des packages bien structurés, ainsi qu'une gestion détaillée des méthodes pour chaque entité. L'exécution se fait via une interface simple en terminal.
