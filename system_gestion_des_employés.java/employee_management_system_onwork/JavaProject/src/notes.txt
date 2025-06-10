@@ -1,0 +1,37 @@
+Type d’employé	Rôle principal	Position
+
+Employé opérationnel	    Exécuter des tâches concrètes	Base
+
+Cadre intermédiaire	        Encadrer les équipes	Moyen
+
+Cadre supérieur	            Diriger un service/fonction	Haut
+
+Direction générale	        Décider de la stratégie globale	Sommet
+
+Fonctions support	        Assurer le bon fonctionnement interne	Transversal
+
+
+
+Employé opérationnel	    500 € – 900 €	
+Cadre intermédiaire	        700 € – 1 200 €	
+Cadre supérieur	            1 300 € – 2 000 €	
+Direction générale	        2 500 € – 3 500 €	
+Fonctions support	        600 € – 1 100 €
+
+
+
+
+    protected String niveau;
+
+
+"Débutant (0-1 an)"
+
+"Junior (1-3 ans)"
+
+"Intermédiaire (3-5 ans)"
+
+"Confirmé (5-8 ans)"
+
+"Senior (8-12 ans)"
+
+"Expert (12+ ans)"

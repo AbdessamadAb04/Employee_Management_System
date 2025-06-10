@@ -1,0 +1,95 @@
+import java.util.*;
+
+class Employe {
+    private int id;
+    private String nom;
+    private String prenom;
+    private Date dateEmbauche;
+    private Salaire salaire;
+    private List<Projet> projets = new ArrayList<>();
+    
+    public Employe(int id, String nom, String prenom, Date dateEmbauche, Salaire salaire) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateEmbauche = dateEmbauche;
+        this.salaire = salaire;
+    }
+
+    public int getId() { return id; }
+    public String getNom() { return nom; }
+    public String getPrenom() { return prenom; }
+    public Date getDateEmbauche() { return dateEmbauche; }
+    public Salaire getSalaire() { return salaire; }
+    public List<Projet> getProjets() { return projets; }
+    
+    public void setSalaire(Salaire salaire) { this.salaire = salaire; }
+    public void ajouterProjet(Projet projet) { projets.add(projet); }
+    public void retirerProjet(Projet projet) { projets.remove(projet); }
+}
+
+
+
+
+class Departement {
+    private int id;
+    private String nom;
+    private List<Employe> employes = new ArrayList<>();
+    
+    public Departement(int id, String nom) {
+        this.id = id;
+        this.nom = nom;
+    }
+    
+    public void ajouterEmploye(Employe employe) { employes.add(employe); }
+    public void retirerEmploye(Employe employe) { employes.remove(employe); }
+}
+
+
+
+
+class Projet {
+    private int id;
+    private String nom;
+    private Date dateDebut;
+    private Date dateFin;
+    private List<Employe> participants = new ArrayList<>();
+    
+    public Projet(int id, String nom, Date dateDebut, Date dateFin) {
+        this.id = id;
+        this.nom = nom;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+    }
+    
+    public void ajouterEmploye(Employe employe) { participants.add(employe); }
+    public void retirerEmploye(Employe employe) { participants.remove(employe); }
+}
+
+
+
+
+
+class GestionEmployes {
+    private List<Employe> employes = new ArrayList<>();
+    
+    public void ajouterEmploye(Employe employe) { employes.add(employe); }
+    public void supprimerEmploye(int id) { employes.removeIf(e -> e.getId() == id); }
+    public Employe rechercherEmploye(int id) {
+        return employes.stream().filter(e -> e.getId() == id).findFirst().orElse(null);
+    }
+}
+
+
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        GestionEmployes gestionEmployes = new GestionEmployes();
+        Salaire salaire1 = new Salaire(3000, 200, 100, 50);
+        Employe employe1 = new Employe(1, "Dupont", "Jean", new Date(), salaire1);
+        gestionEmployes.ajouterEmploye(employe1);
+        System.out.println("Employé ajouté: " + employe1.getNom());
+    }
+}
